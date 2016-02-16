@@ -1,0 +1,6 @@
+#install.packages("VIM")
+#install.packages("VIMGUI")
+library(VIM)
+library(tcltk)
+library(VIMGUI)
+vmGUImenu()
