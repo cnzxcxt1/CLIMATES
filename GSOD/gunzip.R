@@ -20,6 +20,7 @@ for (j in 2:7) {
 }
 finallist=Stations[[7]]
 nbrstations=length(finallist)
+write.csv(finallist,file="D://download//GSOD//commonlist.csv",quote=T,row.names=F)
 ### so I have 9435 Stations for 2010-2016 years
 
 #install.packages("R.utils")
