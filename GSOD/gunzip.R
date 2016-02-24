@@ -1,9 +1,10 @@
 
-year=2010:2016
+year=2005:2009
+nbr_years=length(year)
 Stations=list()
 
 ## read the station list for each year
-for (i in 1:7) {
+for (i in 1:nbr_years) {
   path=paste("D://download//GSOD//gsod_",year[i],sep="")
   setwd(path)
   filelist=dir()
@@ -12,22 +13,22 @@ for (i in 1:7) {
 }
 
 ## find out the common stations
-for (j in 2:7) {
+for (j in 2:nbr_years) {
   list1=Stations[[j-1]];
   list2=Stations[[j]];
   commonlist=intersect(list1,list2);
   Stations[[j]]=commonlist
 }
-finallist=Stations[[7]]
+finallist=Stations[[nbr_years]]
 nbrstations=length(finallist)
 write.csv(finallist,file="D://download//GSOD//commonlist.csv",quote=T,row.names=F)
 ### so I have 9435 Stations for 2010-2016 years
 
 #install.packages("R.utils")
-#library(R.utils)
+library(R.utils)
 
 ## gunzip the record of common station 
-for (k in 1:7) {
+for (k in 1:nbr_years) {
   path=paste("D://download//GSOD//gsod_",year[k],sep="")
   setwd(path)
   for (l in 1:nbrstations) {
@@ -41,7 +42,7 @@ nbr_para=7
 firsts=c(15,19,21,25,103,111,119)
 lasts=c(18,20,22,30,108,116,123)
 name_para=c("Date","TEMP","TMAX","TMIN","PRCP")
-for (i in 1:7) {
+for (i in 1:nbr_years) {
   path=paste("D://download//GSOD//gsod_",year[i],sep="")
   setwd(path)
   for (j in 1:nbrstations) {
