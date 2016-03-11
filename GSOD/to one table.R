@@ -1,7 +1,7 @@
 
 Stationlist=read.table("D://download//GSOD/commonlist.csv",header=T)
 nbr_Station=nrow(Stationlist)
-year=2005:2009
+year=1978:1981
 nbr_years=length(year)
 var=c("TEMP","TMAX","TMIN","PRCP")
 for (i  in 1:nbr_years) {

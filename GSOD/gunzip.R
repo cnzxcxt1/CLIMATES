@@ -1,5 +1,5 @@
 
-year=2005:2009
+year=1978:1989
 nbr_years=length(year)
 Stations=list()
 
@@ -38,6 +38,8 @@ for (k in 1:nbr_years) {
 
 #ptm <- proc.time()
 ### this program takes more time
+year=1978:1981
+nbr_years=length(year)
 nbr_para=7
 firsts=c(15,19,21,25,103,111,119)
 lasts=c(18,20,22,30,108,116,123)
